@@ -1,7 +1,7 @@
 //Theme-Colors
-/*$theme-colors   : (
-    "primary"   : #12232E,
-    "secondary" : #007CC7,
+$theme-colors   : (
+    "primary"   : #007CC7,
+    "secondary" : #4DA8DA,
     "blue"      : #007CC7,
     "indigo"    : #796eff,
     "purple"    : #6f42c1,
@@ -13,7 +13,7 @@
     "teal"      : #2e9cca,
     "cyan"      : #17a2b8,
     "white"     : #EEFBFB,
-    "lightb"     : #4DA8DA,
+    "darkerb"   : #12232E,
     "darkb"     : #203647 
 );
 
@@ -22,25 +22,18 @@ $primary:   map_get($theme-colors, 'primary');
 $secondary: map_get($theme-colors, 'secondary'); 
 $white:     map_get($theme-colors, 'white'); 
 $lightb:    map_get($theme-colors, 'lightb'); 
+$darkerb:   map_get($theme-colors, 'darkerb');
 $darkb:     map_get($theme-colors, 'darkb');
-//$blue       
-//$indigo;
-//$purple;
-//$pink;
-$red:       map_get($theme-colors, 'red');;
-//$orange;
-//$yellow;
-//$green;
-//$teal;
-//$cyan;
-$white:     map_get($theme-colors, 'white');*/
-
-//Variables
-$primary: #007CC7;
-$secondary: #4DA8DA;
-$darkerb: #12232E;
-$darkb: #203647;
-$white: #EEFBFB;
+$blue:      map_get($theme-colors, 'blue');       
+$indigo:    map_get($theme-colors, 'indigo');
+$purple:    map_get($theme-colors, 'purple');
+$pink:      map_get($theme-colors, 'pink');
+$red:       map_get($theme-colors, 'red');
+$orange:    map_get($theme-colors, 'orange');
+$yellow:    map_get($theme-colors, 'yellow');
+$green:     map_get($theme-colors, 'green');
+$teal:      map_get($theme-colors, 'teal');
+$cyan:      map_get($theme-colors, 'cyan');
 
 $border-radius: 0;
 $border-radius-sm: 0;
@@ -48,4 +41,3 @@ $border-radius-lg: 0;
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'style';
-@import 'scrollbar';
