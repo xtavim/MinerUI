@@ -1,0 +1,128 @@
+html, body {
+    height: 100%;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h2,
+h3,
+label, 
+p {
+    font-weight: 500;
+}
+
+button {
+    font-weight: 600 !important;
+}
+
+/********/
+/* LOGIN */
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+/* LOGIN */
+/********/
+
+/********/
+/* MENU */
+.dash-toggler {
+    display: none;
+    z-index: 5000;
+
+    position: absolute;
+    width: 100%;
+}
+
+#toggler i {
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+#toggler i.up{
+    -ms-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.dashboard {
+    width: 20vw;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    background-color: $primary;
+
+    transition: top 0.7s;
+}
+
+.main-dash {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+.main {
+    width: 100%;
+    background-color: $secondary;
+}
+
+.banner {
+    padding-top: 2rem;
+    margin-bottom: 7rem;
+    color: white;
+    height: 10px;
+}
+
+.link {
+    display: flex;
+    margin: 2rem 0rem;
+    padding: 1rem 5rem;
+    
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+.link h2 {
+    padding: 0rem 0.7rem;
+    margin: 0;
+}
+
+.signout {
+    width: 100%;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/* KEY FRAMES    */
+/*****************/
+@media (max-width: 700px) {
+    .dashboard {
+        position: absolute;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+    }
+
+    .dash-toggler {        
+        display: grid;
+    }
+}
+/********/
+/* MENU */
+/********/

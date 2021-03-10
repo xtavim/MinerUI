@@ -1,0 +1,22 @@
+{
+  "name": "minerui",
+  "version": "1.0.0",
+  "description": "User Interface to control your mining rig",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtavim/MinerUI.git"
+  },
+  "author": "Gustavo Mendes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xtavim/MinerUI/issues"
+  },
+  "homepage": "https://github.com/xtavim/MinerUI#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta2"
+  }
+}
