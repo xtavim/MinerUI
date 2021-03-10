@@ -1,4 +1,5 @@
 import GetCard from '../components/card.js';
+import homeHandler from './utils/homeHandler.js';
 
 $(function() {
     /*Temp*/
@@ -31,4 +32,12 @@ function bindEvents() {
 
         $(this).addClass('active');
     });
+
+    $('#home').on('click', function() {
+        $.getJSON("/test/test.json", function(data) {
+            if(data.success === 1) {
+                homeHandler(data);
+            }
+        });
+    })
 }
