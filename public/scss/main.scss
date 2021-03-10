@@ -1,6 +1,46 @@
+//Theme-Colors
+/*$theme-colors   : (
+    "primary"   : #12232E,
+    "secondary" : #007CC7,
+    "blue"      : #007CC7,
+    "indigo"    : #796eff,
+    "purple"    : #6f42c1,
+    "pink"      : #e83e8c,
+    "red"       : #dc3545,
+    "orange"    : #e3240C,
+    "yellow"    : #ffc107,
+    "green"     : #21c87a,
+    "teal"      : #2e9cca,
+    "cyan"      : #17a2b8,
+    "white"     : #EEFBFB,
+    "lightb"     : #4DA8DA,
+    "darkb"     : #203647 
+);
+
 //Variables
-$primary: #001f3f;
-$secondary: #f4f4f4;
+$primary:   map_get($theme-colors, 'primary'); 
+$secondary: map_get($theme-colors, 'secondary'); 
+$white:     map_get($theme-colors, 'white'); 
+$lightb:    map_get($theme-colors, 'lightb'); 
+$darkb:     map_get($theme-colors, 'darkb');
+//$blue       
+//$indigo;
+//$purple;
+//$pink;
+$red:       map_get($theme-colors, 'red');;
+//$orange;
+//$yellow;
+//$green;
+//$teal;
+//$cyan;
+$white:     map_get($theme-colors, 'white');*/
+
+//Variables
+$primary: #007CC7;
+$secondary: #4DA8DA;
+$darkerb: #12232E;
+$darkb: #203647;
+$white: #EEFBFB;
 
 $border-radius: 0;
 $border-radius-sm: 0;
@@ -8,3 +48,4 @@ $border-radius-lg: 0;
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'style';
+@import 'scrollbar';

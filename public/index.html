@@ -4,42 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miner UI</title>
-    
+    <title>MinerUI</title>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/main.css">
     <script src="https://kit.fontawesome.com/ffa40ec79c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="d-flex text-center bg-secondary">
+<body class="d-flex text-center">
     <form class="form-login" action="main.html">
-        <i class="fab fa-bootstrap fa-4x mb-4 text-primary"></i>
+        <div class="container-fluid">
+            <i class="fab fa-bootstrap fa-4x mb-4 text-secondary"></i>
 
-        <h1 class="h3 mb-3 font-weight-normal">Miner UI</h1>
+            <h1 class="h3 mb-3 font-weight-normal">MinerUI</h1>
 
-        <div class="form-floating mb-2">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required>
-            <label for="inputEmail">Email Address</label>    
-        </div>
-        <div class="form-floating mb-2">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <label for="inputPassword">Password</label>
-        </div>
+            <div class="form-floating mb-2 bg-white">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required>
+                <label for="inputEmail">Email Address</label>
+            </div>
+            <div class="form-floating mb-2 bg-white">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+            </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input class="form-check-input" type="checkbox" value="remember-me" /> Remember Me
-            </label>
-        </div>
-        <div class="d-grid">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Login
-            </button>
+            <div class="checkbox mb-3">
+                <label class="text-white">
+                    <input class="form-check-input" type="checkbox" value="remember-me" /> Remember Me
+                </label>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-lg btn-secondary btn-block" type="submit">
+                    Login
+                </button>
+            </div>
         </div>
     </form>
 </body>
 
 <script src="vendor/js/jquery-3.5.1.min.js"></script>
 <script src="js/index.js"></script>
+
 </html>

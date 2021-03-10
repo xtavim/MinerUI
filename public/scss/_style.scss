@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    background-color: $darkerb;
 }
 
 * {
@@ -17,14 +18,45 @@ button {
     font-weight: 600 !important;
 }
 
+.form-check-input:checked {
+    background-color: $secondary !important;
+    border-color: $secondary !important;
+}
+
+.form-check-input:focus {
+    border-color: $secondary !important;
+    box-shadow: 0 0 0 0.25rem rgba($secondary, $input-btn-focus-color-opacity) !important;
+}
+
+.btn-danger {
+    color: $white !important;
+}
+
 /********/
 /* LOGIN */
 .form-login {
+    background-color: $darkb;
+    display: flex;
     width: 100%;
-    max-width: 330px;
+    max-width: 400px;
+    height: 450px;
     padding: 15px;
     margin: auto;
 }
+
+.form-login div.container-fluid {
+    max-width: 330px;
+    margin: auto;
+}
+
+.form-login h1 {
+    color: $white;
+}
+
+.form-login button[type="submit"]{
+    color: $white;
+}
+
 /* LOGIN */
 /********/
 
@@ -61,7 +93,7 @@ button {
     justify-content: space-between;
     text-align: center;
 
-    background-color: $primary;
+    background-color: $darkb;
 
     transition: top 0.7s;
 }
@@ -82,7 +114,7 @@ button {
     justify-content: center;
     flex-grow: 2;
 
-    color: white;
+    color: $white;
 }
 
 .links {
@@ -102,7 +134,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: $white;
 
     cursor: pointer;
     transition: ease-in-out 0.4s;
@@ -110,7 +142,7 @@ button {
 
 .link:not(.btn-logout):hover {
     background: $dark;
-    color: white;
+    color: $white;
 }
 
 .link.active {
