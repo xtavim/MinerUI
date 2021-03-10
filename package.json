@@ -2,7 +2,7 @@
   "name": "minerui",
   "version": "1.0.0",
   "description": "User Interface to control your mining rig",
-  "main": "init.js",
+  "main": "./js/init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

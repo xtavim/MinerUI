@@ -41,7 +41,7 @@ button {
 #toggler i {
     -moz-transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    transition: all 0.5s linear;
 }
 
 #toggler i.up{
@@ -72,41 +72,88 @@ button {
     display: flex;
     flex-direction: column;
 
-    justify-content: space-evenly;
-}
-
-.main {
-    width: 100%;
-    background-color: $secondary;
+    justify-content: space-around;
 }
 
 .banner {
-    padding-top: 2rem;
-    margin-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+
     color: white;
-    height: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
 }
 
 .link {
     display: flex;
-    margin: 2rem 0rem;
+    flex-grow: 1;
+
+    height: 100px;
+    width: 100%;
     padding: 1rem 5rem;
     
     align-items: center;
     justify-content: center;
 
     color: white;
+
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
 }
 
-.link h2 {
+.link:not(.btn-logout):hover {
+    background: $dark;
+    color: white;
+}
+
+.link.active {
+    background: $dark;
+}
+
+.link h3 {
     padding: 0rem 0.7rem;
     margin: 0;
 }
 
-.signout {
-    width: 100%;
+.btn-logout {
+    padding: 1rem 1rem;
 }
 
+.btn-logout i {
+    padding: 0rem 0.5rem
+}
+
+.main {
+    width: 100%;
+    padding: 1rem;
+    overflow: auto;
+
+    background-color: $dark;
+}
+
+.gpu-card {
+    padding: 1rem;
+    height: 32.3vh;
+}
+
+.gpu-card-info {
+    width: 100%;
+    height: 100%;
+
+    background: $primary;
+}
+
+
+.row {
+    --bs-gutter-x: 0;
+}
 /*****************/
 /* MEDIA QUERIES */
 /* KEY FRAMES    */
@@ -121,6 +168,19 @@ button {
 
     .dash-toggler {        
         display: grid;
+    }
+
+    .banner {
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+
+    .link {
+        height: unset;
+    }
+
+    .main {
+        padding-top: 48px;
     }
 }
 /********/

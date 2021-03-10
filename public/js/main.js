@@ -1,4 +1,17 @@
+import GetCard from '../components/card.js';
+
 $(function() {
+    /*Temp*/
+    var temp = '';
+    for (let index = 0; index < 9; index++) {
+        temp += GetCard();
+    }
+    $('.main').html(temp)
+    /*Temp*/
+    bindEvents();
+});
+
+function bindEvents() {
     $('#toggler').on('click', async function() {
         var top = $('.dashboard').css('top');
 
@@ -12,4 +25,10 @@ $(function() {
             $('#toggler').css('pointer-events', 'all');
         }, 700);
     });
-});
+
+    $('.link:not(.btn-logout)').on('click', function() {
+        $('.link').removeClass('active');
+
+        $(this).addClass('active');
+    });
+}
