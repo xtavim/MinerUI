@@ -1,51 +1,19 @@
-//Theme-Colors
-/*$theme-colors   : (
-    "primary"   : #12232E,
-    "secondary" : #007CC7,
-    "blue"      : #007CC7,
-    "indigo"    : #796eff,
-    "purple"    : #6f42c1,
-    "pink"      : #e83e8c,
-    "red"       : #dc3545,
-    "orange"    : #e3240C,
-    "yellow"    : #ffc107,
-    "green"     : #21c87a,
-    "teal"      : #2e9cca,
-    "cyan"      : #17a2b8,
-    "white"     : #EEFBFB,
-    "lightb"     : #4DA8DA,
-    "darkb"     : #203647 
-);
-
-//Variables
-$primary:   map_get($theme-colors, 'primary'); 
-$secondary: map_get($theme-colors, 'secondary'); 
-$white:     map_get($theme-colors, 'white'); 
-$lightb:    map_get($theme-colors, 'lightb'); 
-$darkb:     map_get($theme-colors, 'darkb');
-//$blue       
-//$indigo;
-//$purple;
-//$pink;
-$red:       map_get($theme-colors, 'red');;
-//$orange;
-//$yellow;
-//$green;
-//$teal;
-//$cyan;
-$white:     map_get($theme-colors, 'white');*/
-
 //Variables
 $primary: #007CC7;
 $secondary: #4DA8DA;
 $darkerb: #12232E;
 $darkb: #203647;
 $white: #EEFBFB;
+$glass: rgba(255, 255, 255, 0.404);
+$darkglass: rgba(0, 0, 0, 0.404);
 
 $border-radius: 0;
 $border-radius-sm: 0;
 $border-radius-lg: 0;
 
+/*$border-radius: 1.5rem;
+$border-radius-sm: 1.5rem;
+$border-radius-lg: 1.5rem;*/// Redondo
+
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'style';
-@import 'scrollbar';
