@@ -24,13 +24,13 @@ button {
 }
 
 .form-check-input:checked {
-    background-color: $secondary !important;
-    border-color: $secondary !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
 }
 
 .form-check-input:focus {
-    border-color: $secondary !important;
-    box-shadow: 0 0 0 0.25rem rgba($secondary, $input-btn-focus-color-opacity) !important;
+    border-color: $primary !important;
+    box-shadow: 0 0 0 0.25rem rgba($primary, $input-btn-focus-color-opacity) !important;
 }
 
 .form-control, .input-group-text {
@@ -65,8 +65,8 @@ button {
 .bg-image {
     background-image: url(/assets/index.jpg);
 
-    filter: blur(15px);
-    -webkit-filter: blur(15px);
+    filter: blur(1.2rem);
+    -webkit-filter: blur(1.2rem);
 
     height: 100%;
     width: 100%;
@@ -88,7 +88,7 @@ button {
     padding: 15px;
     margin: auto;
 
-    //border-radius: $b-radius; Redondo
+    //border-radius: $b-radius; //Redondo
     z-index: 1;
 }
 
@@ -142,6 +142,8 @@ button {
     text-align: center;
 
     background-color: $glass;
+    //border-top-right-radius: $b-radius; //Redondo
+    //border-bottom-right-radius: $b-radius; //Redondo
 
     transition: top 0.7s;
 
@@ -187,20 +189,30 @@ button {
     color: $white;
 
     cursor: pointer;
-    transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.5s;
+}
+
+
+.link:not(.btn-logout) {
+    font-size: 1.5rem;
 }
 
 .link:not(.btn-logout):hover {
-    background: $dark;
+    background: $darkglass;
     color: $white;
 }
 
 .link.active {
-    background: $dark;
+    background: $darkglass;
 }
 
-.link h3 {
-    padding: 0rem 0.7rem;
+.link i {
+    padding-right: 0.35rem;
+    margin: 0;
+}
+
+.link span {
+    padding-left: 0.35rem;
     margin: 0;
 }
 
