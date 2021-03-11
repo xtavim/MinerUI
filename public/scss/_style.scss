@@ -23,6 +23,10 @@ button {
     color: $white !important;
 }
 
+.form-check-input {
+    border-radius: $b-radius !important;
+}
+
 .form-check-input:checked {
     background-color: $primary !important;
     border-color: $primary !important;
@@ -88,7 +92,7 @@ button {
     padding: 15px;
     margin: auto;
 
-    //border-radius: $b-radius; //Redondo
+    border-radius: $b-radius; //Redondo
     z-index: 1;
 }
 
@@ -142,8 +146,8 @@ button {
     text-align: center;
 
     background-color: $glass;
-    //border-top-right-radius: $b-radius; //Redondo
-    //border-bottom-right-radius: $b-radius; //Redondo
+    border-top-right-radius: $b-radius; //Redondo
+    border-bottom-right-radius: $b-radius; //Redondo
 
     transition: top 0.7s;
 
