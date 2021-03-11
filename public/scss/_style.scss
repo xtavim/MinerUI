@@ -239,8 +239,7 @@ button {
     width: 100%;
     padding: 1rem;
     overflow: auto;
-
-    background-color: $dark;
+    z-index: 1;
 }
 
 .gpu-card {
@@ -248,7 +247,6 @@ button {
     height: 32.3vh;
 
     position: relative;
-    z-index: 1;
 }
 
 .gpu-card-info {
