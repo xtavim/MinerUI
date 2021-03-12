@@ -1,0 +1,10 @@
+.front,
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition-duration: 1000ms;
+}
+.rotate {
+    transform: rotateY(180deg);
+}

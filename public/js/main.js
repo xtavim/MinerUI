@@ -1,14 +1,18 @@
-import GetCard from '../components/card.js';
-
+import GetCard from '../components/GetCard.js';
+var mobileW = 700; 
 $(function () {
+    bindEvents();
+    
+
     /*Temp*/
     var temp = '';
-    for (let index = 0; index < 9; index++) {
+    for (let index = 0; index < 2; index++) {
         temp += GetCard();
     }
-    $('#home').append(temp)
+    $('#home, #settings').append(temp);
+    
+    $('[value="home"]').trigger('click');
     /*Temp*/
-    bindEvents();
 });
 
 function bindEvents() {
@@ -28,6 +32,10 @@ function bindEvents() {
 
     $('.link:not(.btn-logout)').on('click', function () {
         linkHandler(this);
+
+        if(window.innerWidth <= mobileW) {
+            $('#toggler').trigger('click');
+        }
     });
 }
 
