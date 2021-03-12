@@ -1,4 +1,5 @@
-import GetCard from '../components/GetCard.js';
+import Components from '../components/Components.js';
+
 var mobileW = 700; 
 $(function () {
     bindEvents();
@@ -7,7 +8,7 @@ $(function () {
     /*Temp*/
     var temp = '';
     for (let index = 0; index < 2; index++) {
-        temp += GetCard();
+        temp += Components.GetCard();
     }
     $('#home, #settings').append(temp);
     
@@ -16,7 +17,7 @@ $(function () {
 });
 
 function bindEvents() {
-    $('#toggler').on('click', async function () {
+    $('#toggler').on('click', function () {
         var top = $('.dashboard').css('top');
 
         top === '0px' ? top = "-100%" : top = "0px";
