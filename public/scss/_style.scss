@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+
     background-color: $darkerb;
 }
 
@@ -25,16 +26,16 @@ button {
 
 .form-check-input {
     border-radius: $b-radius !important;
-}
 
-.form-check-input:checked {
-    background-color: $primary !important;
-    border-color: $primary !important;
-}
+    &:checked {
+        background-color: $primary !important;
+        border-color: $primary !important;
+    }
 
-.form-check-input:focus {
-    border-color: $primary !important;
-    box-shadow: 0 0 0 0.25rem rgba($primary, $input-btn-focus-color-opacity) !important;
+    &:focus {
+        border-color: $primary !important;
+        box-shadow: 0 0 0 0.25rem rgba($primary, $input-btn-focus-color-opacity) !important;    
+    }
 }
 
 .form-control, .input-group-text {
@@ -89,24 +90,46 @@ button {
     width: 100%;
     max-width: 400px;
     height: 450px;
-    padding: 15px;
     margin: auto;
 
     border-radius: $b-radius; //Redondo
     z-index: 1;
-}
 
-.form-login div.container-fluid {
-    max-width: 330px;
-    margin: auto;
-}
+    h1 {
+        color: $white;
+    }
 
-.form-login h1 {
-    color: $white;
+    div.container-fluid {
+        position: relative;
+        max-width: 330px;
+        margin: auto;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .btn-group-index button {
     width: 50%;
+}
+
+.return {
+    height: 42px;
+    width: 42px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: $darkglass;
+}
+
+.return-wrapper {
+    position: absolute;
+    width: 100%;
+    max-width: inherit;
+    display: flex;
 }
 
 /* LOGIN */
@@ -126,19 +149,19 @@ button {
     border-radius: 0;
     border-bottom-left-radius: $b-radius;
     border-bottom-right-radius: $b-radius;
-}
 
-#toggler i {
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-    transition: all 0.5s linear;
-}
+    i {
+        -moz-transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.5s linear;
+    }
 
-#toggler i.up{
-    -ms-transform: rotateX(180deg);
-    -moz-transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    i.up{
+        -ms-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
 }
 
 .dashboard {
@@ -151,7 +174,7 @@ button {
     justify-content: space-between;
     text-align: center;
 
-    background-color: $glass;
+    background-color: $glass !important;
     border-top-right-radius: $b-radius; //Redondo
     border-bottom-right-radius: $b-radius; //Redondo
 
@@ -188,7 +211,6 @@ button {
 .link {
     display: flex;
     flex-grow: 1;
-    border-radius: 0;
 
     height: 100px;
     width: 100%;
@@ -198,44 +220,42 @@ button {
     justify-content: center;
 
     color: $white;
+    border-radius: 0;
+    box-shadow: unset !important;
 
     cursor: pointer;
     transition: ease-in-out 0.5s;
-}
 
-.link:not(.btn-logout) {
-    font-size: 1.5rem;
-}
+    i, span {
+        padding-right: 0.35rem;
+        margin: 0;
+    }
 
-.link:not(.btn-logout):hover {
-    background: $darkglass;
-    color: $white;
-}
+    &.active {
+        background: $darkglass;
+    }
 
-.link.active {
-    background: $darkglass;
-}
-
-.link i {
-    padding-right: 0.35rem;
-    margin: 0;
-}
-
-.link span {
-    padding-left: 0.35rem;
-    margin: 0;
+    &:not(.btn-logout) {
+        font-size: 1.5rem;
+        
+        &:hover {
+            background: $darkglass;
+            color: $white;
+        }
+    }
 }
 
 .btn-logout {
     padding: 1rem 1rem;
     border-bottom-right-radius: $b-radius;
-}
 
-.btn-logout i {
-    padding: 0rem 0.5rem
+    i {
+        padding: 0rem 0.5rem
+    }
 }
 
 .main {
+    height: 100%;
     width: 100%;
     padding: 1rem;
     overflow: auto;
@@ -278,7 +298,7 @@ button {
 
     .banner {
         justify-content: flex-end;
-        flex-grow: 1;
+        flex-grow: 3;
     }
 
     .link {
