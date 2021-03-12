@@ -14,34 +14,86 @@ p {
     font-weight: 500;
 }
 
+.input-icon {
+    width: 16px !important;
+}
+
 button {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
+    color: $white !important;
+}
+
+.form-check-input {
+    border-radius: $b-radius !important;
 }
 
 .form-check-input:checked {
-    background-color: $secondary !important;
-    border-color: $secondary !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
 }
 
 .form-check-input:focus {
-    border-color: $secondary !important;
-    box-shadow: 0 0 0 0.25rem rgba($secondary, $input-btn-focus-color-opacity) !important;
+    border-color: $primary !important;
+    box-shadow: 0 0 0 0.25rem rgba($primary, $input-btn-focus-color-opacity) !important;
 }
 
-.btn-red {
+.form-control, .input-group-text {
+    background: $darkglass !important;
     color: $white !important;
+    margin: 0 !important;
+
+    border: 0;
+}
+
+.form-control:invalid {
+    box-shadow: unset !important;
+}
+
+.form-control:focus {
+    border-right: 0;
+
+    box-shadow: unset;
+}
+
+.form-floating {
+    color: $white;
 }
 
 /********/
 /* LOGIN */
+.index {
+    display: flex; 
+    text-align: center;
+}
+
+.bg-image {
+    background-image: url(/assets/index.jpg);
+
+    filter: blur(1.2rem);
+    -webkit-filter: blur(1.2rem);
+
+    height: 100%;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+    z-index: 0;
+}
+
 .form-login {
-    background-color: $darkb;
+    background-color: $glass;
     display: flex;
     width: 100%;
     max-width: 400px;
     height: 450px;
     padding: 15px;
     margin: auto;
+
+    border-radius: $b-radius; //Redondo
+    z-index: 1;
 }
 
 .form-login div.container-fluid {
@@ -53,8 +105,8 @@ button {
     color: $white;
 }
 
-.form-login button[type="submit"]{
-    color: $white;
+.btn-group-index button {
+    width: 50%;
 }
 
 /* LOGIN */
@@ -68,6 +120,12 @@ button {
 
     position: absolute;
     width: 100%;
+}
+
+#toggler {
+    border-radius: 0;
+    border-bottom-left-radius: $b-radius;
+    border-bottom-right-radius: $b-radius;
 }
 
 #toggler i {
@@ -93,9 +151,13 @@ button {
     justify-content: space-between;
     text-align: center;
 
-    background-color: $darkb;
+    background-color: $glass;
+    border-top-right-radius: $b-radius; //Redondo
+    border-bottom-right-radius: $b-radius; //Redondo
 
     transition: top 0.7s;
+
+    z-index: 1000;
 }
 
 .main-dash {
@@ -126,6 +188,7 @@ button {
 .link {
     display: flex;
     flex-grow: 1;
+    border-radius: 0;
 
     height: 100px;
     width: 100%;
@@ -137,25 +200,35 @@ button {
     color: $white;
 
     cursor: pointer;
-    transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.5s;
+}
+
+.link:not(.btn-logout) {
+    font-size: 1.5rem;
 }
 
 .link:not(.btn-logout):hover {
-    background: $dark;
+    background: $darkglass;
     color: $white;
 }
 
 .link.active {
-    background: $dark;
+    background: $darkglass;
 }
 
-.link h3 {
-    padding: 0rem 0.7rem;
+.link i {
+    padding-right: 0.35rem;
+    margin: 0;
+}
+
+.link span {
+    padding-left: 0.35rem;
     margin: 0;
 }
 
 .btn-logout {
     padding: 1rem 1rem;
+    border-bottom-right-radius: $b-radius;
 }
 
 .btn-logout i {
@@ -166,22 +239,23 @@ button {
     width: 100%;
     padding: 1rem;
     overflow: auto;
-
-    background-color: $dark;
+    z-index: 1;
 }
 
 .gpu-card {
     padding: 1rem;
     height: 32.3vh;
+
+    position: relative;
 }
 
 .gpu-card-info {
     width: 100%;
     height: 100%;
+    border-radius: $b-radius;
 
-    background: $primary;
+    background: $darkglass;
 }
-
 
 .row {
     --bs-gutter-x: 0;
@@ -209,6 +283,7 @@ button {
 
     .link {
         height: unset;
+        border-radius: 0;
     }
 
     .main {
