@@ -18,25 +18,27 @@
         <div class="return-wrapper back rotate">
             <button class="btn flip return" type="button">
                 <i class="fas fa-reply" aria-hidden="true"></i>
-            </button>    
+            </button>
         </div>
-        <div class="container-fluid">            
+        <div class="container-fluid">
             <!--Front-->
             <div class="front">
-                <form id="login" action="main.html">
+                <form id="login-form" action="main.html">
                     <i class="fas fa-coins fa-4x mb-4 text-secondary"></i>
 
                     <h1 class="h3 mb-3 font-weight-normal">MinerUI</h1>
 
                     <div class="form-floating input-group mb-2">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address"
+                            maxlength="255" required>
                         <label for="inputEmail">Email Address</label>
                         <span class="input-group-text">
-                            <i class="fas fa-user input-icon"></i>
+                            <i class="fas fa-envelope input-icon"></i>
                         </span>
                     </div>
                     <div class="form-floating input-group mb-2">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+                            minlength="6" maxlength="1024" required>
                         <label for="inputPassword">Password</label>
                         <span class="input-group-text">
                             <i class="fas fa-key input-icon"></i>
@@ -63,42 +65,44 @@
 
             <!--Back-->
             <div class="back rotate">
-                <i class="fas fa-coins fa-4x mb-4 text-secondary"></i>
+                <form id="register-form">
+                    <i class="fas fa-coins fa-4x mb-4 text-secondary"></i>
 
-                <h1 class="h3 mb-3 font-weight-normal">MinerUI</h1>
+                    <h1 class="h3 mb-3 font-weight-normal">MinerUI</h1>
 
-                <div class="form-floating input-group mb-2">
-                    <input type="email" id="inputEmailRegister" class="form-control" placeholder="Email Address"
-                        required>
-                    <label for="inputEmailRegister">Email Address</label>
-                    <span class="input-group-text">
-                        <i class="fas fa-user input-icon"></i>
-                    </span>
-                </div>
-                <div class="form-floating input-group mb-2">
-                    <input type="password" id="inputPasswordRegister" class="form-control" placeholder="Password"
-                        required>
-                    <label for="inputPasswordRegister">Password</label>
-                    <span class="input-group-text">
-                        <i class="fas fa-key input-icon"></i>
-                    </span>
-                </div>
-                <div class="form-floating input-group mb-2">
-                    <input type="password" id="inputPasswordRepeat" class="form-control" placeholder="Repeat Password"
-                        required>
-                    <label for="inputPasswordRepeat">Repeat Password</label>
-                    <span class="input-group-text">
-                        <i class="fas fa-key input-icon"></i>
-                    </span>
-                </div>
-
-                <div class="row">
-                    <div class="btn-group btn-group-index" role="group">
-                        <button id="register" class="btn btn-lg btn-secondary" type="button">
-                            Register
-                        </button>
+                    <div class="form-floating input-group mb-2">
+                        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username"
+                            minlength="6" maxlength="255" required>
+                        <label for="inputUsername">Username</label>
+                        <span class="input-group-text">
+                            <i class="fas fa-user input-icon"></i>
+                        </span>
                     </div>
-                </div>
+                    <div class="form-floating input-group mb-2">
+                        <input type="email" id="inputEmailRegister" name="email" class="form-control" placeholder="Email Address"
+                            required maxlength="255">
+                        <label for="inputEmailRegister">Email Address</label>
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope input-icon"></i>
+                        </span>
+                    </div>
+                    <div class="form-floating input-group mb-2">
+                        <input type="password" id="inputPasswordRegister" name="password" class="form-control" placeholder="Password"
+                            minlength="6" maxlength="1024" required>
+                        <label for="inputPasswordRegister">Password</label>
+                        <span class="input-group-text">
+                            <i class="fas fa-key input-icon"></i>
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="btn-group btn-group-index" role="group">
+                            <button id="register" class="btn btn-lg btn-secondary" type="submit">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

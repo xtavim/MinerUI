@@ -1,18 +1,26 @@
 import Components from '../components/Components.js';
+import { register } from './requests.js';
 
-$(function() {
+$(function () {
     bindEvents();
     Components.GetCard();
 });
 
 function bindEvents() {
-    $('.flip').on('click', function() {
+    $('.flip').on('click', function () {
         $('.front, .back').toggleClass('rotate');
     });
 
-    $('#register').on('click', function() {
-        Components.GetSuccessAlert();
+    $('#register-form').on('submit', function (e) {
+        const response = register($(this).serializeObject());
 
-        $('.flip.return').trigger('click');
+        //Success
+        if (response.status === 200) {
+            Components.GetSuccessAlert(response.message)
+            $('.flip.return').trigger('click');
+        } else {
+            Components.GetErrorAlert(response.message);
+        };
+        e.preventDefault();
     });
 }
