@@ -1,31 +1,48 @@
+import Components from '../components/Components.js';
 const SERVER_URL = 'http://localhost:5000/user/';
 
 export function register(data) {
-    var t = call('register', data);
-    console.log(t)
-    return t
+    callRegister('register', data);
 }
 
-function call(path, data) {
-    var obj = {};
+export function login(data) {
+    callLogin('login', data);
+}
 
+function callRegister(path, data) {
     $.ajax({
         type: "POST",
         contentType: "application/json",
         url: SERVER_URL + path,
         data: JSON.stringify(data),
-        complete: function(data, textStatus) {
-            console.log(data, data.status)
-            obj.status = data.status;
-            
-            if(data.status === 200) {
-                //token
+        dataType: 'json',
+        complete: function (data, textStatus) {
+            //Success
+            if (data.status === 200) {
+                Components.GetSuccessAlert(data.responseText.message);                
+                $('.flip.return').trigger('click');
             } else {
-                obj.message = data.responseText;
+                Components.GetErrorAlert(data.responseText.message);
             }
-        },
-        dataType: 'json'
+        }
     });
+}
 
-    return obj;
+function callLogin(path, data) {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: SERVER_URL + path,
+        data: JSON.stringify(data),
+        dataType: 'json',
+        complete: function (data, textStatus) {
+            //Success
+            if (data.status === 200) {
+                window.location.href = "/main.html";
+            } else {
+                Components.GetErrorAlert(data.responseText);
+                //token
+            }
+        }
+    });
 }
