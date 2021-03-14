@@ -3,7 +3,6 @@ import { register, login } from './requests.js';
 
 $(function () {
     bindEvents();
-    Components.GetCard();
 });
 
 function bindEvents() {

@@ -10,6 +10,9 @@ export function login(data) {
 }
 
 function callRegister(path, data) {
+    Components.ToggleOverlay();
+    Components.GetSpinner('register');
+
     $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -19,16 +22,23 @@ function callRegister(path, data) {
         complete: function (data, textStatus) {
             //Success
             if (data.status === 200) {
-                Components.GetSuccessAlert(data.responseText.message);                
+                Components.GetSuccessAlert(data.responseText);                
                 $('.flip.return').trigger('click');
             } else {
-                Components.GetErrorAlert(data.responseText.message);
+                console.log(data.responseText)
+                Components.GetErrorAlert(data.responseText);
             }
+
+            Components.RemoveSpinner('register');
+            Components.ToggleOverlay();
         }
     });
 }
 
 function callLogin(path, data) {
+    Components.ToggleOverlay();
+    Components.GetSpinner('login');
+
     $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -41,8 +51,11 @@ function callLogin(path, data) {
                 window.location.href = "/main.html";
             } else {
                 Components.GetErrorAlert(data.responseText);
+                Components.RemoveSpinner('login');
                 //token
             }
+
+            Components.ToggleOverlay();
         }
     });
 }

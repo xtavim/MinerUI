@@ -1,1 +1,1 @@
-server: node . 
+Create server: "npm start" or "node ." 
