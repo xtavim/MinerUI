@@ -1,6 +1,8 @@
 import Card from './card.js';
 import {SuccessAlert, ErrorAlert} from './alert.js';
 import {Spinner, RemoveSpinner} from './spinner.js';
+import RenderIndex from './renderIndex.js';
+import RenderMain from './renderMain.js';
 
 export default class Components {
     static ToggleOverlay () {
@@ -47,5 +49,13 @@ export default class Components {
      */
     static RemoveSpinner(id) {
         RemoveSpinner(id);
+    }
+
+    /**
+     * Renders Index HTML Content
+     */
+    static RenderIndex() {
+        RenderIndex();
+        console.log('render')
     }
 }

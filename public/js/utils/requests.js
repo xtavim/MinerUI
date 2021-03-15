@@ -46,9 +46,12 @@ function callRegister(path, data) {
         dataType: 'json',
         complete: function (data, textStatus) {
             //Success
+                console.log('success')
             if (data.status === 200) {
+                console.log($('.flip.return'))
                 Components.GetSuccessAlert(data.responseText);
                 $('.flip.return').trigger('click');
+                console.log($('.flip.return'))
             } else {
                 Components.GetErrorAlert(data.responseText);
             }
@@ -76,7 +79,7 @@ function callLogin(path, data) {
             //Success
             if (data.status === 200) {
                 setAccessToken(data.responseJSON.accessToken);
-                window.location.href = "/main.html";
+                Components.RenderMain();
             } else {
                 Components.GetErrorAlert(data.responseText);
                 Components.RemoveSpinner('login');

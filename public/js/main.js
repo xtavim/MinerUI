@@ -5,8 +5,6 @@ const mobileW = 700;
 (async () => {
     auth().then(data => {
         $(function () {
-            console.log(2);
-
             bindEvents();
 
             /*Temp*/
