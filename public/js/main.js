@@ -1,20 +1,31 @@
 import Components from '../components/Components.js';
+import { auth } from './utils/requests.js';
+const mobileW = 700;
 
-var mobileW = 700; 
-$(function () {
-    bindEvents();
-    
+(async () => {
+    auth().then(data => {
+        $(function () {
+            console.log(2);
 
-    /*Temp*/
-    var temp = '';
-    for (let index = 0; index < 2; index++) {
-        temp += Components.GetCard();
-    }
-    $('#home, #settings').append(temp);
-    
-    $('[value="home"]').trigger('click');
-    /*Temp*/
-});
+            bindEvents();
+
+            /*Temp*/
+            var temp = '';
+            for (let index = 0; index < 2; index++) {
+                temp += Components.GetCard();
+            }
+            $('#home, #settings').append(temp);
+
+            $('[value="home"]').trigger('click');
+            /*Temp*/
+
+            //Remove Overlay
+            Components.ToggleOverlay('noclick');
+        });
+    }).catch(err => {
+        window.location.href = '/';
+    });
+})();
 
 function bindEvents() {
     $('#toggler').on('click', function () {
@@ -34,7 +45,7 @@ function bindEvents() {
     $('.link:not(.btn-logout)').on('click', function () {
         linkHandler(this);
 
-        if(window.innerWidth <= mobileW) {
+        if (window.innerWidth <= mobileW) {
             $('#toggler').trigger('click');
         }
     });

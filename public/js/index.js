@@ -1,8 +1,9 @@
 import Components from '../components/Components.js';
-import { register, login } from './requests.js';
-
+import { register, login } from './utils/requests.js';
 $(function () {
     bindEvents();
+    
+    Components.ToggleOverlay();
 });
 
 function bindEvents() {

@@ -1,12 +1,37 @@
-import Components from '../components/Components.js';
-const SERVER_URL = 'http://localhost:5000/user/';
+import Components from '../../components/Components.js';
+import { getAccessToken, setAccessToken } from './accessToken.js';
+
+const SERVER_URL = 'http://localhost:5000';
 
 export function register(data) {
-    callRegister('register', data);
+    callRegister('/user/register', data);
 }
 
 export function login(data) {
-    callLogin('login', data);
+    callLogin('/user/login', data);
+}
+
+export async function auth() {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            headers: {
+                authorization: getAccessToken()
+            },
+            type: "GET",
+            contentType: "application/json",
+            url: SERVER_URL + '/main/',
+            dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (response) {
+                resolve(response)
+            },
+            error: function (response) {
+                reject(response)
+            }
+        });
+    });
 }
 
 function callRegister(path, data) {
@@ -22,10 +47,9 @@ function callRegister(path, data) {
         complete: function (data, textStatus) {
             //Success
             if (data.status === 200) {
-                Components.GetSuccessAlert(data.responseText);                
+                Components.GetSuccessAlert(data.responseText);
                 $('.flip.return').trigger('click');
             } else {
-                console.log(data.responseText)
                 Components.GetErrorAlert(data.responseText);
             }
 
@@ -45,9 +69,13 @@ function callLogin(path, data) {
         url: SERVER_URL + path,
         data: JSON.stringify(data),
         dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
         complete: function (data, textStatus) {
             //Success
             if (data.status === 200) {
+                setAccessToken(data.responseJSON.accessToken);
                 window.location.href = "/main.html";
             } else {
                 Components.GetErrorAlert(data.responseText);

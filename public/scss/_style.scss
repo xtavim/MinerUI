@@ -101,7 +101,15 @@ button {
     left: 0;
     z-index: 9999; /* or maybe higher */
 
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $primary;
+
+    &.transparent {
+        background-color: transparent;
+    }
 }
 
 .btn {
