@@ -101,14 +101,11 @@ export default function RenderIndex() {
 
     $('body').html(html);
 
-    console.log(1)
-
     bindEvents();
 }
 
 
 function bindEvents() {
-    console.log('bind')
     $('.flip').on('click', function () {
         $('.front, .back').toggleClass('rotate');
     });
@@ -116,7 +113,6 @@ function bindEvents() {
     $(document).on('submit', '#register-form', function (e) {
         register($(this).serializeObject());
 
-        console.log('lol')
         e.preventDefault();
     });
 

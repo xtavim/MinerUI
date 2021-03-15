@@ -1,5 +1,6 @@
 export default function RenderMain() {
-    return `<div class="noclick">
+    const html =
+             `<div class="noclick">
                 <span class="spinner-border" role="status" aria-hidden="true"></span>
             </div>
             <div class="bg-image"></div>
@@ -54,4 +55,46 @@ export default function RenderMain() {
             <div id="settings" class="row" hidden></div>
             <div id="help" class="row" hidden></div>
         </div>`;
+
+    $('body').html(html);
+
+    bindEvents();
+}
+
+function bindEvents() {
+    const mobileW = 700;
+    
+    $('#toggler').on('click', function () {
+        var top = $('.dashboard').css('top');
+
+        top === '0px' ? top = "-100%" : top = "0px";
+        $('.dashboard').css('top', top);
+
+        $('#toggler i').toggleClass("up");
+
+        $(this).css('pointer-events', 'none');
+        setTimeout(function () {
+            $('#toggler').css('pointer-events', 'all');
+        }, 700);
+    });
+
+    $('.link:not(.btn-logout)').on('click', function () {
+        linkHandler(this);
+
+        if (window.innerWidth <= mobileW) {
+            $('#toggler').trigger('click');
+        }
+    });
+}
+
+//Utils
+function linkHandler(btn) {
+    var active = $('.link.active');
+    active.removeClass('active');
+    $('#' + active.attr('value')).attr('hidden', true);
+
+    $(btn).addClass('active');
+    var id = "#" + $(btn).attr('value');
+
+    $(id).attr('hidden', false);
 }

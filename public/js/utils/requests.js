@@ -11,7 +11,7 @@ export function login(data) {
     callLogin('/user/login', data);
 }
 
-export async function auth() {
+/*export async function auth() {
     return new Promise((resolve, reject) => {
         $.ajax({
             headers: {
@@ -32,13 +32,13 @@ export async function auth() {
             }
         });
     });
-}
+}*/
 
 function callRegister(path, data) {
     Components.ToggleOverlay();
     Components.GetSpinner('register');
 
-    $.ajax({
+    /*$.ajax({
         type: "POST",
         contentType: "application/json",
         url: SERVER_URL + path,
@@ -59,14 +59,22 @@ function callRegister(path, data) {
             Components.RemoveSpinner('register');
             Components.ToggleOverlay();
         }
-    });
+    });*/
+
+        console.log($('.flip.return'))
+        Components.GetSuccessAlert(data.responseText);
+        $('.flip.return').trigger('click');
+        console.log($('.flip.return'))
+
+    Components.RemoveSpinner('register');
+    Components.ToggleOverlay();
 }
 
 function callLogin(path, data) {
     Components.ToggleOverlay();
     Components.GetSpinner('login');
 
-    $.ajax({
+    /*$.ajax({
         type: "POST",
         contentType: "application/json",
         url: SERVER_URL + path,
@@ -88,5 +96,20 @@ function callLogin(path, data) {
 
             Components.ToggleOverlay();
         }
-    });
+    });*/
+
+     //Success
+        setAccessToken('testetoken');
+        Components.RenderMain();
+    /*Temp*/
+    var temp = '';
+    for (let index = 0; index < 2; index++) {
+        temp += Components.GetCard();
+    }
+    $('#home, #settings').append(temp);
+
+    $('[value="home"]').trigger('click');
+    /*Temp*/
+    Components.ToggleOverlay();
+
 }

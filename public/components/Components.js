@@ -56,6 +56,12 @@ export default class Components {
      */
     static RenderIndex() {
         RenderIndex();
-        console.log('render')
+    }
+
+    /**
+     * Renders Main HTML Content
+     */
+     static RenderMain() {
+        RenderMain();
     }
 }
