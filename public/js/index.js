@@ -1,6 +1,9 @@
 import Components from '../components/Components.js';
+import { refreshToken } from '../js/utils/requests.js';
 
 $(function () {
-    Components.RenderIndex();
-    Components.ToggleOverlay();
+    //Refresh Token
+    (() => {
+        refreshToken();
+    })();
 });

@@ -1,11 +1,8 @@
 import { register, login } from '../js/utils/requests.js';
 
 export default function RenderIndex() {
-    const html = 
-            `<div class="noclick">
-                <span class="spinner-border" role="status" aria-hidden="true"></span>
-            </div>
-            <div class="bg-image"></div>
+    const html =
+            `<div class="bg-image"></div>
             <div class="form-login">
                 <div class="return-wrapper back rotate">
                     <button class="btn flip return" type="button">
@@ -116,7 +113,7 @@ function bindEvents() {
         e.preventDefault();
     });
 
-    $(document).on('submit', '#login-form', function(e) {
+    $(document).on('submit', '#login-form', function (e) {
         login($(this).serializeObject());
 
         e.preventDefault();

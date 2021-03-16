@@ -1,9 +1,8 @@
+import { postMain } from '../js/utils/requests.js';
+
 export default function RenderMain() {
     const html =
-             `<div class="noclick">
-                <span class="spinner-border" role="status" aria-hidden="true"></span>
-            </div>
-            <div class="bg-image"></div>
+            `<div class="bg-image"></div>
 
             <div class="dash-toggler">
                 <button id="toggler" class="btn btn-lg btn-primary btn-block" type="button">
@@ -63,7 +62,7 @@ export default function RenderMain() {
 
 function bindEvents() {
     const mobileW = 700;
-    
+
     $('#toggler').on('click', function () {
         var top = $('.dashboard').css('top');
 
@@ -80,6 +79,8 @@ function bindEvents() {
 
     $('.link:not(.btn-logout)').on('click', function () {
         linkHandler(this);
+
+        postMain()
 
         if (window.innerWidth <= mobileW) {
             $('#toggler').trigger('click');

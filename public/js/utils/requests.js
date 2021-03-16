@@ -11,34 +11,50 @@ export function login(data) {
     callLogin('/user/login', data);
 }
 
-/*export async function auth() {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            headers: {
-                authorization: getAccessToken()
-            },
-            type: "GET",
-            contentType: "application/json",
-            url: SERVER_URL + '/main/',
-            dataType: 'json',
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (response) {
-                resolve(response)
-            },
-            error: function (response) {
-                reject(response)
-            }
-        });
+export function postMain() {
+    $.ajax({
+        headers: {
+            authorization: `bearer ${getAccessToken()}`
+        },
+        type: "GET",
+        contentType: "application/json",
+        url: SERVER_URL + '/main/',
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (data, textStatus) {
+            console.log(data)
+        }
     });
-}*/
+}
+
+export function refreshToken() {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: SERVER_URL + '/user/refresh_token',
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        complete: function (data, textStatus) {
+            if (data.responseJSON.ok) {
+                setAccessToken(data.responseJSON.accessToken);
+                Components.RenderMain();
+            } else {
+                Components.RenderIndex();
+            }
+
+        }
+    });
+}
 
 function callRegister(path, data) {
     Components.ToggleOverlay();
     Components.GetSpinner('register');
 
-    /*$.ajax({
+    $.ajax({
         type: "POST",
         contentType: "application/json",
         url: SERVER_URL + path,
@@ -46,12 +62,9 @@ function callRegister(path, data) {
         dataType: 'json',
         complete: function (data, textStatus) {
             //Success
-                console.log('success')
             if (data.status === 200) {
-                console.log($('.flip.return'))
                 Components.GetSuccessAlert(data.responseText);
                 $('.flip.return').trigger('click');
-                console.log($('.flip.return'))
             } else {
                 Components.GetErrorAlert(data.responseText);
             }
@@ -59,22 +72,14 @@ function callRegister(path, data) {
             Components.RemoveSpinner('register');
             Components.ToggleOverlay();
         }
-    });*/
-
-        console.log($('.flip.return'))
-        Components.GetSuccessAlert(data.responseText);
-        $('.flip.return').trigger('click');
-        console.log($('.flip.return'))
-
-    Components.RemoveSpinner('register');
-    Components.ToggleOverlay();
+    });
 }
 
 function callLogin(path, data) {
     Components.ToggleOverlay();
     Components.GetSpinner('login');
 
-    /*$.ajax({
+    $.ajax({
         type: "POST",
         contentType: "application/json",
         url: SERVER_URL + path,
@@ -96,12 +101,10 @@ function callLogin(path, data) {
 
             Components.ToggleOverlay();
         }
-    });*/
+    });
 
-     //Success
-        setAccessToken('testetoken');
-        Components.RenderMain();
-    /*Temp*/
+
+    /*Temp
     var temp = '';
     for (let index = 0; index < 2; index++) {
         temp += Components.GetCard();
@@ -109,7 +112,6 @@ function callLogin(path, data) {
     $('#home, #settings').append(temp);
 
     $('[value="home"]').trigger('click');
-    /*Temp*/
-    Components.ToggleOverlay();
+    Temp*/
 
 }
